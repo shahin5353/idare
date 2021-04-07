@@ -3,37 +3,22 @@ import BaseReducer from '../../utils/BaseReducer'
 
 export default class ProjectReducer extends BaseReducer {
     initialState = {
-        projectName: null,
-        projectDescription: null,
-        client: null,
-        contructor: null,
+        projectBasicInfo: null,
+        projectAdvanceInfo: null
     };
 
-    [ProjectAction.SET_PROJECT_NAME](state, action) {
+    [ProjectAction.SET_PROJECT_BASIC_INFO](state, action) {
         return {
             ...state,
-            projectName: action.payload
+            projectBasicInfo: action.payload
         }
     }
 
-    [ProjectAction.SET_PROJECT_DESCRIPTION](state, action) {
+    [ProjectAction.SET_PROJECT_ADVANCE_INFO](state, action) {
         return {
             ...state,
-            projectDescription: action.payload
+            projectAdvanceInfo: action.payload
         }
     }
-    [ProjectAction.SET_CLIENT](state, action) {
-        return {
-            ...state,
-            client: action.payload
-        }
-    }
-    [ProjectAction.SET_CONTRUCTOR](state, action) {
-        return {
-            ...state,
-            contructor: action.payload
-        }
-    }
-
    
 }

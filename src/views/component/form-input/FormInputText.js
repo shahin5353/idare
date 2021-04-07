@@ -1,4 +1,4 @@
-import { Form, Icon, Input } from 'antd'
+import { Form, Input } from 'antd'
 // import { WarningOutlined } from '@ant-design/icons'
 // import React from 'react'
 
@@ -20,7 +20,7 @@ export function FormInputText(props) {
                 style={{ backgroundColor: `${props.backgroundColor}`, color: `${props.color}`, fontWeight: `${props.fontWeight}` }}
                 size={'small'}
                 onChange={(e) => props.control.handleInputChange(props.name, e.target.value)}
-                suffix={props.suffixIcon ? <Icon type={props.suffixIcon} /> : null}
+                // suffix={props.suffixIcon ? <Icon type={props.suffixIcon} /> : null}
                 addonBefore={props.prefix ? props.prefix : null}
                 value={props.control.values[`${props.name}`]}
                 disabled={props.disabled}
