@@ -18,7 +18,7 @@ export function FormInputText(props) {
         >
             <Input
                 style={{ backgroundColor: `${props.backgroundColor}`, color: `${props.color}`, fontWeight: `${props.fontWeight}` }}
-                size={'small'}
+                size={'medium'}
                 onChange={(e) => props.control.handleInputChange(props.name, e.target.value)}
                 // suffix={props.suffixIcon ? <Icon type={props.suffixIcon} /> : null}
                 addonBefore={props.prefix ? props.prefix : null}

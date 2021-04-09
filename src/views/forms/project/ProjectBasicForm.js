@@ -41,22 +41,22 @@ export default function ProjectBasicForm(props) {
     return (
         <FormBasicContainer>
             <FormInputText
-                label={'Project Name'}
+                label={'Project Name: '}
                 control={control}
                 name={'projectName'}
             />
             <FormInputText
-                label={'Project Description'}
+                label={'Description: '}
                 control={control}
                 name={'projectDescription'}
             />
             <FormInputText
-                label={'Client'}
+                label={'Client: '}
                 control={control}
                 name={'client'}
             />
             <FormInputText
-                label={'Contructor'}
+                label={'Contructor: '}
                 control={control}
                 name={'contructor'}
             />

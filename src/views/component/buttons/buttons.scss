@@ -1,0 +1,19 @@
+$whiteColor: #fff;
+$greenStroke: #14ab72;
+
+.btn-mild-green {
+    color: $greenStroke;
+    background: $whiteColor;
+    border: 1px solid $greenStroke;
+}
+
+.btn-mild-green:hover {
+    color: $whiteColor;
+    background: $greenStroke;
+    border: 1px solid $greenStroke;
+}
+.btn-mild-green:focus {
+    color: $whiteColor;
+    background: $greenStroke;
+    border: 1px solid $greenStroke;
+}

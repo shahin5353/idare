@@ -12,8 +12,8 @@ export const Card = styled.div`
 
 export const FormBasicContainer = styled(Card)`
     margin-bottom: 20px;
-    margin-top: 20px;
-    width: 50%;
+    margin-top: 10px;
+    width: ${isMobile? '': '50%'};
 `
 export const FormIconContainer = styled(Card)`
     margin-bottom: 20px;
