@@ -1,5 +1,6 @@
 $whiteColor: #fff;
 $greenStroke: #14ab72;
+$redStroke: #e53935;
 
 .btn-mild-green {
     color: $greenStroke;
@@ -16,4 +17,20 @@ $greenStroke: #14ab72;
     color: $whiteColor;
     background: $greenStroke;
     border: 1px solid $greenStroke;
+}
+.btn-mild-red {
+    color: $redStroke;
+    background: $whiteColor;
+    border: 1px solid $redStroke;
+}
+
+.btn-mild-red:hover {
+    color: #fff;
+    background: $redStroke;
+    border: 1px solid $redStroke;
+}
+.btn-mild-red:focus {
+    color: #fff;
+    background: $redStroke;
+    border: 1px solid $redStroke;
 }
