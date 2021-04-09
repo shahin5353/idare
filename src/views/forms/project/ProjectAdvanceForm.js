@@ -107,7 +107,7 @@ export default function ProjectAdvanceForm(props) {
                 <p style={{ 'fontWeight': 'bold' }}>Uploaded {values.csvData}</p>
             ) : (
                 <Upload
-                    accept='.csv'
+                    accept='.csv, text/comma-separated-values, application/vnd.ms-excel'
                     style={{ width: '300px' }}
                     className='avatar-uploader'
                     control={control}
