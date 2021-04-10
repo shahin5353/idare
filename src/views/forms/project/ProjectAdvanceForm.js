@@ -55,8 +55,8 @@ export default function ProjectAdvanceForm(props) {
         }
     }, [csvFileData])
     function beforeUpload(file) {
-        console.log(file.type);
-        if (file.type !== 'application/vnd.ms-excel' || file.type!=='text/comma-separated-values') {
+        const isCSV = file.type === 'application/vnd.ms-excel' || file.type === 'text/comma-separated-values'
+        if (!isCSV) {
             message.error({ content: 'You can only upload CSV File!', key: 'FileTpeError', duration: 2 })
             return false;
         }
@@ -107,6 +107,7 @@ export default function ProjectAdvanceForm(props) {
                 <p style={{ 'fontWeight': 'bold' }}>Uploaded {values.csvData}</p>
             ) : (
                 <Upload
+                    accept='.csv'
                     style={{ width: '300px' }}
                     className='avatar-uploader'
                     control={control}
