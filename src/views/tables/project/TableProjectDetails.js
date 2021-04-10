@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
+import KmpXChart from '../../charts/KmpXChart'
 import PdfProjectDetails from '../../component/pdf/PdfProjectDetails'
 import ComponentTable from '../ComponentTable'
 
@@ -75,5 +76,5 @@ export default function TableProjectDetails({data}) {
       
     ]
 
-    return <ComponentTable dataList={data} columns={columns} />
+    return <div style={{width:'100%',}}><ComponentTable dataList={data} columns={columns} /><KmpXChart/></div>
 }

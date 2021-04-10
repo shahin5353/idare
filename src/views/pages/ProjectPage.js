@@ -17,7 +17,6 @@ const { Step } = Steps;
 export default function ProjectPage() {
     const projectBasicInfo = useSelector(makeSelectProjectBasicInfo)
     const projectAdvanceInfo = useSelector(makeSelectProjectAdvanceInfo)
-    const csvFileData = useSelector(makeSelectProjectCSVFileData);
     const dispatch = useDispatch()
     const [current, setCurrent] = useState(0);
     useEffect(() => {
@@ -41,10 +40,7 @@ export default function ProjectPage() {
         },
         {
             title: 'Result',
-            content: <>
-                <TableProjectDetails data={[{ ...projectBasicInfo, ...projectAdvanceInfo }]} />
-                <KmpXChart data={csvFileData}/>
-            </>,
+            content: <TableProjectDetails data={[{ ...projectBasicInfo, ...projectAdvanceInfo }]} />
         },
     ];
 

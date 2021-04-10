@@ -6,6 +6,7 @@ import ProjectPage from './pages/ProjectPage'
 import { AppContainer } from './Styles'
 import './App.scss'
 import './ant-style.scss'
+import KmpXChart from './charts/KmpXChart'
 
 export default function App(props) {
   const dispatch = useDispatch()
@@ -21,7 +22,7 @@ function AppMainBar() {
   <Router>
       <Switch>
       <Route exact path={AppRoutes.DEFAULT} render={() => <ProjectPage />} />
-
+      <Route exact path={AppRoutes.ABOUT} render={() => <KmpXChart />} />
       <Route component={NotFoundPage} />
     </Switch>
   </Router>
