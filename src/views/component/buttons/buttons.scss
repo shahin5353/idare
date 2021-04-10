@@ -25,12 +25,12 @@ $redStroke: #e53935;
 }
 
 .btn-mild-red:hover {
-    color: #fff;
+    color: $whiteColor;
     background: $redStroke;
     border: 1px solid $redStroke;
 }
 .btn-mild-red:focus {
-    color: #fff;
+    color: $whiteColor;
     background: $redStroke;
     border: 1px solid $redStroke;
 }

@@ -47,22 +47,6 @@ export default function useFormInputValidation(
         }
     }
 
-    const handleImageChange = (name, imageFile) => {
-        if (imageFile.status !== 'error') {
-            _getBase64(imageFile.originFileObj, (binaryFile) => {
-                setValues({
-                    ...values,
-                    [name]: binaryFile
-                })
-            })
-        }
-    }
-
-    const _getBase64 = (img, callback) => {
-        const reader = new FileReader()
-        reader.addEventListener('load', () => callback(reader.result))
-        reader.readAsDataURL(img)
-    }
 
     useEffect(() => {
         validateData()
@@ -98,7 +82,6 @@ export default function useFormInputValidation(
         handleSubmit,
         handleInputChange,
         setValue,
-        handleImageChange,
         resetData,
         setValues,
         control: {

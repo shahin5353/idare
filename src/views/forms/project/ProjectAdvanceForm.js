@@ -39,10 +39,8 @@ export default function ProjectAdvanceForm(props) {
     const { control, values } = useFormInputValidation(INITIAL_STATE, VALIDATION_SCHEMA)
     const onSubmit = () => {
         dispatch(ProjectAction._setProjectAdvanceInfo(values))
-        console.log(values);
     }
     const csvFileData = useSelector(makeSelectProjectCSVFileData);
-
     useEffect(() => {
         if (csvFileData.length) {
             const max_X = csvFileData.sort((a, b) => b.X - a.X)[0].X;
@@ -74,7 +72,7 @@ export default function ProjectAdvanceForm(props) {
                         dispatch(FileAction._setProjectCSVFileData(results.data))
                     } else {
                         control.setValue('csvData', '');
-                        console.log("Wrong Format");
+                        message.error({ content: 'Wrong Formatted Data! Please Provide Right Format', key: 'FileTpeError', duration: 2 })
                     }
                 }
             })
@@ -83,26 +81,6 @@ export default function ProjectAdvanceForm(props) {
 
     return (
         <FormBasicContainer>
-            {/* <FormInputText
-                label={'Project Name'}
-                control={control}
-                name={'projectName'}
-            />
-            <FormInputText
-                label={'Project Description'}
-                control={control}
-                name={'projectDescription'}
-            />
-            <FormInputText
-                label={'Client'}
-                control={control}
-                name={'client'}
-            />
-            <FormInputText
-                label={'Contructor'}
-                control={control}
-                name={'contructor'}
-            /> */}
             {values.csvData ? (
                 <p style={{ 'fontWeight': 'bold' }}>Uploaded {values.csvData}</p>
             ) : (
