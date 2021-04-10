@@ -55,11 +55,11 @@ export default function ProjectAdvanceForm(props) {
         }
     }, [csvFileData])
     function beforeUpload(file) {
-        console.log(file.type);
-        if (file.type !== 'application/vnd.ms-excel' || file.type!=='text/comma-separated-values') {
-            message.error({ content: 'You can only upload CSV File!', key: 'FileTpeError', duration: 2 })
-            return false;
-        }
+        // console.log(file.type);
+        // if (file.type !== 'application/vnd.ms-excel' || file.type!=='text/comma-separated-values') {
+        //     message.error({ content: 'You can only upload CSV File!', key: 'FileTpeError', duration: 2 })
+        //     return false;
+        // }
         return true;
     }
     const handleChange = (info) => {

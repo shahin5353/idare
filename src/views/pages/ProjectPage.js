@@ -9,12 +9,15 @@ import TableProjectDetails from "../tables/project/TableProjectDetails";
 import './page-style.scss';
 import { DeleteOutlined } from '@ant-design/icons';
 import ResetAction from '../../stores/special/reset/ResetAction'
+import KmpXChart from "../charts/KmpXChart";
+import { makeSelectProjectCSVFileData } from "../../stores/project-file/FileSelector";
 
 const { Step } = Steps;
 
 export default function ProjectPage() {
     const projectBasicInfo = useSelector(makeSelectProjectBasicInfo)
     const projectAdvanceInfo = useSelector(makeSelectProjectAdvanceInfo)
+    const csvFileData = useSelector(makeSelectProjectCSVFileData);
     const dispatch = useDispatch()
     const [current, setCurrent] = useState(0);
     useEffect(() => {
@@ -23,10 +26,10 @@ export default function ProjectPage() {
         }
         else if (projectBasicInfo) {
             setCurrent(1);
-        }else{
+        } else {
             setCurrent(0)
         }
-    }, [projectBasicInfo,projectAdvanceInfo])
+    }, [projectBasicInfo, projectAdvanceInfo])
     const steps = [
         {
             title: 'Project Information',
@@ -34,18 +37,21 @@ export default function ProjectPage() {
         },
         {
             title: 'Upload CSV',
-            content: <ProjectAdvanceForm/>,
+            content: <ProjectAdvanceForm />,
         },
         {
             title: 'Result',
-            content: <TableProjectDetails data={[{...projectBasicInfo,...projectAdvanceInfo}]}/>,
+            content: <>
+                <TableProjectDetails data={[{ ...projectBasicInfo, ...projectAdvanceInfo }]} />
+                <KmpXChart data={csvFileData}/>
+            </>,
         },
     ];
 
     return (
         <>
-            <div style={{textAlign:'center'}}>
-                <h2 style={{borderBottom:'2px solid #000', display:'inline-block', paddingBottom:'10px'}}>Project Information <ButtonMildRed onClick={()=>dispatch(ResetAction.resetStorage())} icon={<DeleteOutlined style={{color:'red'}}/>} text={'Reset'}/></h2>
+            <div style={{ textAlign: 'center' }}>
+                <h2 style={{ borderBottom: '2px solid #000', display: 'inline-block', paddingBottom: '10px' }}>Project Information <ButtonMildRed onClick={() => dispatch(ResetAction.resetStorage())} icon={<DeleteOutlined style={{ color: 'red' }} />} text={'Reset'} /></h2>
             </div>
             <Steps current={current}>
                 {steps.map(item => (
